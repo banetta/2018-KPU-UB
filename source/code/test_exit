@@ -1,0 +1,4 @@
+#!/bin/bash
+#test_exit : exit와 $? 를 테스트하는 프로그램
+
+exit 0

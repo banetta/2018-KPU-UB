@@ -1,0 +1,12 @@
+#!/bin/bash
+#	test_until : 지정한 사용자가 로그인하면 알리는 스크립트
+
+echo -n "input name : "
+read person
+
+until who | grep $person
+do
+	sleep 5
+done
+echo "login"
+

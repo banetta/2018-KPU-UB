@@ -1,0 +1,11 @@
+#!/bin/bash
+#	키보드 입력 처리를 테스트 하는 스크립트
+
+read	x	#	아무 메시지 없이 사용자 입력을 기다림
+echo "x : $x"	#	사용자가 임의의 값을 입력하면 출력
+
+read	x	y	#	첫 단어는 x, 나머지는 y에 저장
+echo "x : $x"	#	x, y 값 출력
+echo "y : $y"
+read	-p "Input : "	#	Input : 을 출력한 후 입력 기다림
+echo "Input : $REPLY"	#	$REPLY에 자동 저장된 입력 값 출력

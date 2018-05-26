@@ -1,0 +1,12 @@
+#!/bin/bash
+#	test_string : 문자열 테스트 스크립트
+
+echo -n "Are you OK (y/n) ? "
+read ans
+
+if [[ $ans = [Yy]* ]]
+then
+	echo Happy to hear it.
+else
+	echo That is too bad.
+fi

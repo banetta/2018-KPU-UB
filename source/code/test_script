@@ -1,0 +1,5 @@
+#!/bin/bash
+#	My First Script Prgram
+
+echo I love Unix !
+pwd
