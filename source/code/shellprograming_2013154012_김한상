@@ -1,0 +1,61 @@
+#!/bin/bash
+
+PS3="Input Command (1-8) : "
+
+select cmd in pwd date touch vi ifconfig useradd userdel quit #pwd=1, date=2, touch=3, vi=4, ifconfig=5, useradd=6, userdel=7, quit=8
+do
+	case $cmd in
+	pwd)
+		pwd ;;
+	date)
+		date;;
+	touch)
+		echo -n input touch file : 
+		read cmd
+		touch $cmd;;
+	vi)
+		echo -n input vim to open file :
+		read cmd
+		vi $cmd;;
+	ifconfig)
+		echo -n choose your enviroment
+		echo
+		echo -n 1 : Windows Sub Linux
+		echo
+		echo -n 2 : Native Linux
+		echo
+		echo -n Input : 
+		read cmd
+		if ((cmd == 1))
+			then
+				ipconfig.exe
+		elif ((cmd == 2))
+			then
+				ifconfig -a
+		else
+			echo -n worng number
+		fi;;	
+	useradd)
+		echo -n You Must Need root password!!
+		echo
+		echo -n Input user name :
+		read username
+		sudo useradd $username
+		sudo passwd $username
+		echo -n complete
+		echo;;
+	userdel)
+		echo -n You Must Need root password!!
+		echo
+		echo -n Input user name :
+		read username
+		sudo userdel -r $username
+		echo -n complete
+		echo;;
+	quit)
+		break;;
+	*)
+		echo "invaild input, select number";;
+	esac
+	REPLY=
+done
